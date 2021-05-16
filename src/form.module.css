@@ -1,0 +1,8 @@
+.container > div {
+    background-color: white;
+}
+
+.container {
+    margin: 50px auto;
+    text-align: center;
+}

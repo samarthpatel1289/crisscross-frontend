@@ -1,0 +1,25 @@
+.container {
+    background-color: rgba(0,0,0,0.2);
+    display: grid;
+    grid : 100px 100px 100px / 100px 100px 100px;
+    gap: 5px;
+    margin: 50px auto;
+    width: calc(3*100px + 2* 5px);
+    height: calc(3*100px + 2* 5px);
+}
+
+.container > div {
+    background-color: white;
+}
+
+.imageshow{
+    display: none;
+}
+
+.name {
+    text-align: center;
+}
+
+.button_container {
+    text-align:center;
+}
