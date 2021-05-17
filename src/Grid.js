@@ -34,7 +34,7 @@ export default function Grid() {
 
   console.log("winner", Winner, checkArray);
   useEffect(() => {
-    setCheckArray(true)
+    setCheckArray(true);
   }, [imageArray]);
 
   useEffect(() => {
@@ -73,10 +73,21 @@ export default function Grid() {
   };
 
   const handleCounter = (key) => {
+    let cross_count = 0
+    let circle_count = 0
+    imageArray.forEach((number) => {
+      console.log(number);
+      if (number === "1"){
+        cross_count = cross_count + 1
+      }else if(number === "-1"){
+        circle_count = circle_count + 1
+      }
+    });
     setCheckArray(false);
+    let changes = 0
+    changes = circle_count - cross_count
     const temp = [...imageArray];
-    console.log("key", key);
-    if (temp[key] === "0") {
+    if (temp[key] === "0" && changes >= 0) {
       if (counter < 9) {
         // if (counter % 2 === 0) {
         //   temp[key] = "-1";
@@ -84,7 +95,6 @@ export default function Grid() {
         // }
         temp[key] = "1";
         setImageArray(temp);
-
         setcounter(counter + 1);
       }
     }
@@ -113,8 +123,7 @@ export default function Grid() {
       </div>
       <div className={styles.button_container}>
         <button onClick={() => handleGame()}>Try Again</button>
-        </div>
-      
+      </div>
     </>
   );
 }
