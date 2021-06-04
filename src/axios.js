@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const Instance = axios.create({
-    baseURL: 'http://52.66.249.24/api/game/',
+    baseURL: 'http://crisscross.projectforexperience.online/api/game/',
     timeout: 10000,
     headers: {'Content-Type': 'application/json'}
 });
